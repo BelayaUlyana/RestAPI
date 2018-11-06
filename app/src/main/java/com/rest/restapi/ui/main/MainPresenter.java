@@ -1,6 +1,5 @@
 package com.rest.restapi.ui.main;
 
-import com.rest.restapi.ApiService;
 import com.rest.restapi.Movie;
 import com.rest.restapi.RetrofitClient;
 
@@ -25,6 +24,7 @@ public class MainPresenter {
                 mainContract.showPopularMovies(response.body());
                 mainContract.hideProgress();
             }
+
             @Override
             public void onFailure(retrofit2.Call<Movie> call, Throwable t) {
                 t.printStackTrace(); // в случае ошибки - в консоль выведется лог

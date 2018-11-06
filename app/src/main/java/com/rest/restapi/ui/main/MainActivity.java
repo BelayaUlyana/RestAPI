@@ -16,15 +16,6 @@ public class MainActivity extends AppCompatActivity implements MainContract {
 
     private MainPresenter presenter;
 
-    // вообще у тебя здесь все плохо))
-    // не используешь никакой паттерн(mvc, mvp, mvvm, clean) - задание переделать это с использованием паттерна МВП
-    // у тебя будет активити + презентер + модель + сервис
-    // в активити в ОнКрэйт вызывается метод из презентера - презентер в свою чередь вызывает метод из модели - модель образается
-    // в сервис - сервис на сервер -> сервер отдает в сервис - сервис в модель - модель в презентер - презентер в активити
-    // связь между активити и презентером происходит через интерфейсы
-
-    // ЗАДАЧА - ПОПРАКТИКОВАТЬСЯ С ПАТТЕРНОМ МВП! :)
-
     @Override
     public void showPopularMovies(Movie movie) {
         adapter.addALL(movie.getResults());
@@ -38,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainContract {
     @Override
     public void showError(String error) {
         progressDialog.dismiss();
-        Toast.makeText(this, "Error:"+error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Error:" + error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
