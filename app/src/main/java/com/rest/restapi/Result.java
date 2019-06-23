@@ -113,7 +113,7 @@ public class Result {
         this.originalLanguage = originalLanguage;
     }
 
-    public String getTitle() {
+    public String   getTitle() {
         return title;
     }
 

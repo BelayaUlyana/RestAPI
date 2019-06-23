@@ -6,28 +6,26 @@ import com.rest.restapi.RetrofitClient;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainPresenter {
+class MainPresenter {
 
     private MainContract mainContract;
 
-    public MainPresenter(MainContract mainContract) {
+    MainPresenter(MainContract mainContract) {
         this.mainContract = mainContract;
     }
 
-    public void getPopularMovies() {
-        retrofit2.Call<Movie> call = RetrofitClient.getApiService().getAllMovies(RetrofitClient.API_KEY); // second offline в офисе еотвлекают засранцы ужааас
+    void getPopularMovies() {
+        retrofit2.Call<Movie> call = RetrofitClient.getApiService().getAllMovies(RetrofitClient.API_KEY);
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(retrofit2.Call<Movie> call, Response<Movie> response) {
-
-                // теперь обратный ход от сервера в активити))
                 mainContract.showPopularMovies(response.body());
                 mainContract.hideProgress();
             }
 
             @Override
             public void onFailure(retrofit2.Call<Movie> call, Throwable t) {
-                t.printStackTrace(); // в случае ошибки - в консоль выведется лог
+                t.printStackTrace();
                 mainContract.showError(t.getMessage());
                 mainContract.hideProgress();
             }

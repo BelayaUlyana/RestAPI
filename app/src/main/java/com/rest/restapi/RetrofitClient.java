@@ -17,6 +17,6 @@ public class RetrofitClient {
     }
 
     public static ApiService getApiService(){
-        return getRetrofitInstance().create(ApiService.class); //Создаем объект, при помощи которого будем выполнять запросы
+        return getRetrofitInstance().create(ApiService.class); 
     }
 }

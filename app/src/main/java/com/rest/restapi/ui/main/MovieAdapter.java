@@ -21,21 +21,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     private List<Result> movieList;
     Context context;
 
-    public MovieAdapter(Context context) {
+    MovieAdapter(Context context) {
         this.context = context;
     }
 
-    public void addALL(List<Result> results) {
+    void addALL(List<Result> results) {
         this.movieList = results;
         notifyDataSetChanged();
     }
 
     class MovieViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
+        final View mView;
         TextView txtTitle;
         private ImageView coverImage;
 
-        public MovieViewHolder(View itemView) {
+        MovieViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
 

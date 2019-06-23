@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainContract {
     @Override
     public void showError(String error) {
         progressDialog.dismiss();
-        Toast.makeText(this, "Error:" + error, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Error:"+error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
